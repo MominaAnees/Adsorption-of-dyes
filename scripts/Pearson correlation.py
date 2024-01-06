@@ -1,5 +1,3 @@
-.. code-block:: python
-
     """
     ==================
     1. Pearson correlation

@@ -17,9 +17,9 @@ from sphinx_gallery.sorting import ExampleTitleSortKey, FileNameSortKey
 
 # -- Project information -----------------------------------------------------
 
-project = 'adsorption_ai'
-copyright = '2022, Sara Iftikhar'
-author = 'Sara Iftikhar'
+project = 'Adsorption of dyes'
+copyright = '2023, Momina'
+author = 'Momina'
 
 
 # -- General configuration ---------------------------------------------------

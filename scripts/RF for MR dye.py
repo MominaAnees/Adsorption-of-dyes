@@ -1,5 +1,3 @@
-.. code-block:: python
-
     """
     ==================
     4. RF for MR dye

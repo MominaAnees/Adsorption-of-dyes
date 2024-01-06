@@ -1,6 +1,6 @@
 """
 ==================
-10. GB for MR dye
+10. XGB for MR dye
 ==================
 """
 import pandas as pd

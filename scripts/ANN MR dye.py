@@ -1,6 +1,6 @@
 """
 ==================
-1. ANN
+2. ANN for MR dye
 ==================
 """
 import pandas as pd
@@ -34,3 +34,25 @@ mse = mean_squared_error(y_test, y_pred)
 print(y_pred)
 print("Mean Squared Error:", mse)
 print("R2:", r2_score(y_test, y_pred, sample_weight=None))
+
+df = pd.read_excel('predicted_data_with_inputs_ANN.xlsx')
+df.head()
+
+df_subset = df.head(200)
+sns.set_theme(style='darkgrid')
+# Create subplots in one line
+sns.regplot(x='Concentration,Cf(mg/L)', y ='Predicted_Concentration,Cf(mg/L)', data = df_subset,
+           scatter_kws={"s": 60, "color": 'snow', "marker": 'o', "edgecolor": 'blue'},
+            line_kws={"color": 'indigo', "linestyle": '--'})
+plt.tight_layout()
+plt.show()
+sns.regplot(x='Adsorption capacity(mg/g)', y ='Predicted_Adsorption capacity(mg/g)', data = df_subset,
+            scatter_kws={"s": 60, "color": 'snow', "marker": 'o', "edgecolor": 'blue'},
+            line_kws={"color": 'indigo', "linestyle": '--'})
+plt.tight_layout()
+plt.show()
+sns.regplot(x='Adsorption efficiency(%)', y ='Predicted_Adsorption efficiency(%)', data = df_subset,
+            scatter_kws={"s": 60, "color": 'snow', "marker": 'o', "edgecolor": 'blue'},
+          line_kws={"color": 'indigo', "linestyle": '--'})
+plt.tight_layout()
+plt.show()

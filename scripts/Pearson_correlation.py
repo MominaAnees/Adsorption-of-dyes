@@ -27,8 +27,3 @@ sns.heatmap(correlation_matrix, annot=True, cmap='BrBG', fmt=".2f")
 plt.title("Correlation Heatmap for BG dye")
 plt.show()
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Scripts
-
-   auto_examples/Pearson_correlation

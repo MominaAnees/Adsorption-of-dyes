@@ -35,7 +35,7 @@ y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 print(y_pred)
 print("Mean Squared Error:", mse)
-print("R2:", r2_score(y_test, y_pred, sample_weight=None, force_finite=True))
+print("R2:", r2_score(y_test, y_pred, sample_weight=None))
 
 
 df = pd.read_excel('predicted_data_with_inputs_BG_ANN.xlsx')

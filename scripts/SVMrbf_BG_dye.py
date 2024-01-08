@@ -1,6 +1,6 @@
 """
 ==================
-14. SVMrbf for BG dye
+SVMrbf for BG dye
 ==================
 """
 

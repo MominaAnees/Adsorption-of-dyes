@@ -1,6 +1,6 @@
 """
 ==================
-13. SVMrbf for MR dye
+SVMrbf for MR dye
 ==================
 """
 

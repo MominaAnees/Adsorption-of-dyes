@@ -18,7 +18,7 @@ y = data_subset[['Concentration,Cf(mg/L)', 'Adsorption capacity(mg/g)', 'Adsorpt
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 gb_regressor = GradientBoostingRegressor(n_estimators=100, max_depth=3, random_state=42)
-gb_regressor.fit(X_train, y_train.values.ravel())  # Note: ravel() to convert y_train to 1D array
+gb_regressor.fit(X_train, y_train.values.ravel())  
 
 test_score = np.zeros((gb_regressor.n_estimators,))
 for i, y_pred in enumerate(gb_regressor.staged_predict(X_test)):

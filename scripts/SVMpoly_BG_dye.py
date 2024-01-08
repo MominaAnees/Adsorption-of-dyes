@@ -1,6 +1,6 @@
 """
 ==================
-12. SVMpoly for BG dye
+SVMpoly for BG dye
 ==================
 """
 

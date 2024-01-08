@@ -15,7 +15,7 @@ correlation_matrix = data.corr()
 
 plt.figure(figsize=(10, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='BrBG', fmt=".2f")
-plt.title("Correlation Heatmap")
+plt.title("Correlation Heatmap for MR dye")
 plt.show()
 
 print("\033[14;1mBG DYE\033[m")

@@ -19,7 +19,10 @@ y = data_subset[['Concentration,Cf(mg/L)', 'Adsorption capacity(mg/g)', 'Adsorpt
 # Use test_size as a fraction of the dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
+y_train_reshaped = y_train.values.ravel()
+
 gb_regressor = GradientBoostingRegressor(n_estimators=100, max_depth=3, random_state=42)
+gb_regressor.fit(X_train, y_train_reshaped)
 
 # Fit the model
 gb_regressor.fit(X_train, y_train.values.ravel())  

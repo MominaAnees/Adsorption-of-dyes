@@ -34,39 +34,37 @@ r2 = r2_score(y_test, y_pred)
 print("R2 Score:", r2)
 
 data = pd.read_excel("Data.xlsx", skiprows=1)
-data_subset = data.head(1000)
+data_subset = data.head(10000)
 
+# Separate input features and output variables
 X = data_subset.drop(columns=['Stirringspeed', 'Temp', 'Time', 'Dosage', 'pH', 'Concentration'], axis=1)
 y = data_subset[['Adsorption capacity(mg/g)']]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-gb_regressor = GradientBoostingRegressor(n_estimators=150, learning_rate=0.1, max_depth=3, random_state=42)
-gb_regressor.fit(X_train, y_train)
+gb_regressor = GradientBoostingRegressor(n_estimators=100, max_depth=3, random_state=42)
+gb_regressor.fit(X_train, y_train.values.ravel())  
 
-train_losses = []
-test_losses = []
+test_score = np.zeros((gb_regressor.n_estimators,))
 
+for i, y_pred in enumerate(gb_regressor.staged_predict(X_test)):
+    test_score[i] = mean_squared_error(y_test, y_pred)
 
-for stage, y_train_pred in enumerate(gb_regressor.staged_predict(X_train)):
-    train_loss = mean_squared_error(y_train, y_train_pred)
-    train_losses.append(train_loss)
-
-for stage, y_test_pred in enumerate(gb_regressor.staged_predict(X_test)):
-    test_loss = mean_squared_error(y_test, y_test_pred)
-    test_losses.append(test_loss)
-
-
-train_losses = np.array(train_losses)
-test_losses = np.array(test_losses)
-
-
-plt.figure(figsize=(10, 6))
-plt.plot(range(1, gb_regressor.n_estimators + 1), train_losses, label='Training Loss', linewidth=2)
-plt.plot(range(1, gb_regressor.n_estimators + 1), test_losses, label='Testing Loss', linewidth=2)
-
-plt.xlabel('Number of Estimators')
-plt.ylabel('Loss')
-plt.title('Training and Testing Loss vs Number of Estimators')
-plt.legend()
+# Plotting
+fig = plt.figure(figsize=(6, 6))
+plt.subplot(1, 1, 1)
+plt.title("Deviance")
+plt.plot(
+    np.arange(gb_regressor.n_estimators) + 1,
+    gb_regressor.train_score_,
+    "b-",
+    label="Training Set Deviance",
+)
+plt.plot(
+    np.arange(gb_regressor.n_estimators) + 1, test_score, "r-", label="Test Set Deviance"
+)
+plt.legend(loc="upper right")
+plt.xlabel("n_estimator")
+plt.ylabel("Deviance")
+fig.tight_layout()
 plt.show()

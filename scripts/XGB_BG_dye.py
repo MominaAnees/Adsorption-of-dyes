@@ -1,6 +1,6 @@
 """
 ==================
-10. XGB for BG dye
+XGB for BG dye
 ==================
 """
 import pandas as pd

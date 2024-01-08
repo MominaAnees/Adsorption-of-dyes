@@ -24,7 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random
 
 
 models = {
-    'Random Forest': RandomForestRegressor(n_estimators=200, max_features=4, bootstrap=True, max_depth=None, oob_score=True, random_state=42),
+    'Random Forest': RandomForestRegressor(n_estimators=200, max_features='sqrt', bootstrap=True, max_depth=None, oob_score=True, random_state=42),
     'Extra Trees': ExtraTreesRegressor(),
     'Gradient Boosting': GradientBoostingRegressor(n_estimators=150, learning_rate=0.1, max_depth=3, random_state=42),
     'Decision Tree': DecisionTreeRegressor(random_state=42),
@@ -63,7 +63,7 @@ y = data_subset[[ 'Adsorption capacity(mg/g)']]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.10, random_state=42)
 
 models = {
-    'Random Forest': RandomForestRegressor(n_estimators=200, max_features=4, bootstrap=True, max_depth=None, oob_score=True, random_state=42),
+    'Random Forest': RandomForestRegressor(n_estimators=200, max_features='sqrt', bootstrap=True, max_depth=None, oob_score=True, random_state=42),
     'Extra Trees': ExtraTreesRegressor(),
     'Gradient Boosting': GradientBoostingRegressor(n_estimators=150, learning_rate=0.1, max_depth=3, random_state=42),
     'Decision Tree': DecisionTreeRegressor(random_state=42),

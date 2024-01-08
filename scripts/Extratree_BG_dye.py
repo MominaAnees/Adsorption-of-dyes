@@ -66,4 +66,4 @@ sns.regplot(x='Adsorption efficiency(%)', y ='Predicted_Adsorption efficiency(%)
             scatter_kws={"s": 60, "color": 'snow', "marker": 'o', "edgecolor": 'blue'},
           line_kws={"color": 'indigo', "linestyle": '--'})
 plt.tight_layout()
-plt.show(
+plt.show()

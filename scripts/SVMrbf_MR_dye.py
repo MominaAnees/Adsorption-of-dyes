@@ -27,9 +27,10 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 
-mse = mean_squared_error(y_test, y_pred, multioutput='raw_values')
-print("Mean Squared Error:", mse[1])
-print("R2 Score:", r2[1])
+mse = mean_squared_error(y_test, y_pred)
+print("Mean Squared Error for Adsorption capacity(mg/g):", mse)
+r2 = r2_score(y_test, y_pred)
+print("R2 Score for Adsorption capacity(mg/g):", r2)
 df = pd.read_excel('predicted_data_with_inputs_SVRrbf_MR.xlsx')
 df_subset = df.head(200)
 df.head(200)

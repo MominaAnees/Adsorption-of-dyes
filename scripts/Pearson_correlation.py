@@ -1,6 +1,6 @@
 """
 ==================
-01. Pearson correlation
+Pearson correlation
 ==================
 """
 print("\033[14;1mMR DYE\033[m")

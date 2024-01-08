@@ -1,6 +1,6 @@
 """
 ==================
-11. SVMpoly for MR dye
+SVMpoly for MR dye
 ==================
 """
 

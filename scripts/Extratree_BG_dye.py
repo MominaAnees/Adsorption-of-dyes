@@ -1,6 +1,6 @@
 """
 ==================
-6. Extra tree for BG dye
+Extra tree for BG dye
 ==================
 """
 

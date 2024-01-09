@@ -1,6 +1,6 @@
 """
 ==================
-5. Extreme Gradient Boosting
+6. Extreme Gradient Boosting
 ==================
 """
 #%%

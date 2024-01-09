@@ -1,11 +1,11 @@
 """
 ==================
-Support Vector Machine
+8. Support Vector Machine
 ==================
 """
 #%%
 # MR dye-SVRpoly
-## --------------
+# --------------
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -63,7 +63,7 @@ plt.show()
 
 #%%
 # BG dye-SVRpoly
-## --------------
+#--------------
 
 data = pd.read_excel("BG.xlsx")
 data_subset = data.head(2000)
@@ -109,7 +109,7 @@ plt.show()
 
 #%%
 # MR dye-SVRrbf
-## --------------
+# --------------
 
 data = pd.read_excel("Data.xlsx", skiprows=1)
 data_subset = data.head(2000)
@@ -156,7 +156,7 @@ plt.show()
 
 #%%
 # BG dye-SVRrbf
-## --------------
+#--------------
 data = pd.read_excel("BG.xlsx")
 data_subset = data.head(2000)
 X = data_subset.drop(columns=['Stirringspeed', 'Temp', 'Time', 'Dosage', 'pH', 'Concentration'], axis=1)

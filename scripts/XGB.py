@@ -5,7 +5,7 @@
 """
 #%%
 # MR dye
-## --------------
+# --------------
 
 import pandas as pd
 import xgboost as xgb
@@ -70,7 +70,7 @@ plt.show()
 
 #%%
 # BG dye
-## --------------
+# --------------
 
 data = pd.read_excel("BG.xlsx")
 data_subset = data.head(2000)

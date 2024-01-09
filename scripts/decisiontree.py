@@ -5,7 +5,7 @@
 """
 #%%
 # MR dye
-## --------------
+# --------------
 
 import pandas as pd
 from sklearn.datasets import load_iris
@@ -59,7 +59,7 @@ plt.show()
 
 #%%
 # BG dye
-## --------------
+# --------------
 data = pd.read_excel("BG.xlsx")
 data_subset = data.head(2000)
 

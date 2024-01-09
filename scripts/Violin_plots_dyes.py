@@ -1,8 +1,12 @@
 """
 ====================
-Violin Plots
+Violin plots 
 ====================
 """
+
+#%%
+# MR dye
+# --------------
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -53,6 +57,10 @@ plt.ylabel('MR Adsorption capacity distribution', fontsize=16)
 plt.xlabel('ML Models', fontsize=16)
 plt.xticks(rotation=45, ha='right')
 plt.show()
+
+#%%
+# BG dye
+# --------------
 
 data = pd.read_excel("BG.xlsx")
 data_subset = data.head(2000)
